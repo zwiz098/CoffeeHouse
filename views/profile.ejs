@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Love orders</title>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body id="full">
+    <div class="topHead">
+      <h1 id="pg">
+         <span class="fa fa-heart"></span>Barista Page<span class="fa fa-heart"></span>
+      </h1>
+      <a href="/logout"><button>Logout</button></a>
+    </div>
+
+      <div class="columns">
+         <div class="pending">
+            <h3>Pending</h3>
+            <% for(var i=0; i<pendingOrders.length; i++) {%>
+            <div class="order">
+               <p class="barista">barista: <%= pendingOrders[i].barista %></p>
+               <p class="customer">customer: <%= pendingOrders[i].customer %></p>
+               <p class="drink">drink: <%= pendingOrders[i]['drink'] %></p>
+               <p class="size">size: <%= pendingOrders[i]['size'] %></p>
+               <p class="milk">milk: <%= pendingOrders[i]['milk'] %></p>
+               <p class="sweetener">sweetener: <%= pendingOrders[i]['sweetener'] %></p>
+               <p class="temperature">temperature: <%= pendingOrders[i]['temperature'] %></p>
+               <p class="note">note: <%= pendingOrders[i]['note'] %></p>
+
+               <button class="complete-order" data-value="<%= pendingOrders[i]._id %>">Complete Order</button>
+               <button class="delete-order" data-value="<%= pendingOrders[i]._id %>">Delete Order</button>
+            </div>
+            <% } %>
+         </div>
+         <div class="completed">
+            <h3>Completed</h3>
+            <% for(var i=0; i<completedOrders.length; i++) {%>
+            <div class="order">
+               <p class="barista">barista: <%= completedOrders[i].barista %></p>
+               <p class="customer">customer: <%= completedOrders[i].customer %></p>
+               <p class="drink">drink: <%= completedOrders[i]['drink'] %></p>
+               <p class="size">size: <%= completedOrders[i]['size'] %></p>
+               <p class="milk">milk: <%= completedOrders[i]['milk'] %></p>
+               <p class="sweetener">sweetener: <%= completedOrders[i]['sweetener'] %></p>
+               <p class="temperature">temperature: <%= completedOrders[i]['temperature'] %></p>
+               <p class="note">note: <%= completedOrders[i]['note'] %></p>
+               <button class="uncomplete-order" data-value="<%= completedOrders[i]._id %>">Uncomplete Order</button>
+               <button class="delete-order" data-value="<%= completedOrders[i]._id %>">Delete Order</button>
+            </div>
+            <% } %>
+         </div>
+      </div>
+      <script src="main.js"></script>
+   </body>
+</html>

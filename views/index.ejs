@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resilient Roasters</title>
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="/login" class="btn btn-default"
+      ><span class="fa fa-user"></span>Login</a
+    >
+    <a href="/signup" class="btn btn-default"
+      ><span class="fa fa-user"></span>Create Login</a
+    >
+    <div class="container">
+      <div class="coffee-order-center">
+        <h2>Coffee Order</h2>
+        <form action="/orders" method="POST" autocomplete="off">
+          <p>
+          <label for="">Barista</label>
+          <input type="text" placeholder="barista name" name="barista" />
+        </p>
+          <p><label for="">Customer</label>
+          <input
+            type="text"
+            value=""
+            name="customer"
+            placeholder="Customer Name"
+          />
+        </p>
+          <fieldset id="drink">
+            <label for="">Beverage: </label>
+
+            <input type="radio" value="coffee" name="drink" checked />
+            <label for="">coffee</label>
+            <input type="radio" value="tea" name="drink" />
+            <label for="">tea</label>
+            <input type="radio" value="water" name="drink" />
+            <label for="">water</label>
+          </fieldset>
+          <fieldset id="size">
+            <label for="">Size: </label>
+
+            <input type="radio" value="small" name="size" checked />
+            <label for="">small</label>
+            <input type="radio" value="medium" name="size" />
+            <label for="">medium</label>
+            <input type="radio" value="large" name="size" />
+            <label for="">large</label>
+          </fieldset>
+          <fieldset id="milk">
+            <label for="">Milk Type: </label>
+            <fieldset id="cow">
+              <label for="">cow:</label>
+
+              <input type="radio" value="whole" name="cow" />
+              <label for="">whole</label>
+              <input type="radio" value="2%" name="cow" />
+              <label for="">2%</label>
+              <input type="radio" value="1%" name="cow" />
+              <label for="">1%</label>
+              <input type="radio" value="lowfat" name="cow" />
+              <label for="">lowfat</label>
+            </fieldset>
+            <input type="radio" value="skim" name="milk"/>
+            <label for="">skim</label>
+            <input type="radio" value="oat" name="milk" checked/>
+            <label for="">oat</label>
+            <input type="radio" value="none" name="milk"/>
+            <label for="">none</label>
+          </fieldset>
+          <fieldset id="sweetener">
+            <label for="">Sweetener: </label>
+            <input type="radio" value="honey" name="sweetener" checked />
+            <label for="">honey</label>
+            <input type="radio" value="sugar" name="sweetener" />
+            <label for="">sugar</label>
+            <input type="radio" value="maple" name="sweetener" />
+            <label for="">maple</label>
+            <input type="radio" value="none" name="sweetener"/>
+            <label for="">none</label>
+          </fieldset>
+          <fieldset id="temperature">
+            <label for="">Temperature: </label>
+            <input type="radio" value="hot" name="temperature" checked />
+            <label for="">hot</label>
+            <input type="radio" value="cold" name="temperature" />
+            <label for="">iced</label>
+          </fieldset>
+          <input
+            class="text-area"
+            type="text"
+            placeholder="Custom/Addition"
+            name="note"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
